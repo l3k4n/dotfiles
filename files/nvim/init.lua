@@ -8,7 +8,7 @@ require('lazy').setup({
   {
     'l3k4n/justmake.nvim',
     config = function()
-      local justmake = require("justmake")
+      local justmake = require('justmake')
       justmake.setup()
 
       vim.keymap.set('n', '<leader>mr', justmake.run, { desc = "Justmake: run" })
