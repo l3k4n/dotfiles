@@ -5,15 +5,19 @@ if [ ! -d "$TEMP_DIR" ]; then
   exit 1
 fi
 
-echo $TEMP_DIR
 cd $TEMP_DIR
 
 git clone git@github.com:l3k4n/dotfiles.git
-cd dotfiles
+cd dotfiles/files
 
 cp ~/.config/nvim/ . -rf
 cp ~/.local/share/wallpapers/ -rf .
 cp ~/.tmux.conf . -f
 cp ~/.gitconfig . -f
 
-git diff --name-only > .changes
+TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
+if [ $(git diff --name-only | wc -l) -gt 0 ]; then
+    git add -A
+    git commit -m "auto-commit: $TIMESTAMP"
+    git push
+fi

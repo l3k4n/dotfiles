@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# CRON_JOB="0 22 * * 0 /path/to/your/script.sh"
-CRON_JOB="* * * * * ~/.cron_dotfile_backup.sh"
+CRON_JOB="0 22 * * 0 /path/to/your/script.sh"
 
-if crontab -l | grep -q "^$CRON_JOB"; then
+if crontab -l | grep -qF "$CRON_JOB"; then
   echo "auto backup already active"
 else
   (crontab -l; echo "$CRON_JOB") | crontab -
