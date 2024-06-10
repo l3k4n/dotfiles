@@ -41,8 +41,7 @@ local function nmap(key, func, desc)
     desc = 'Telescope: ' .. desc
   end
   vim.keymap.set('n', '<leader><space>', function()
-    -- require('telescope.builtin').buffers()
-    vim.notify("use harpoon moron", vim.log.levels.WARN)
+    require('telescope.builtin').buffers()
   end, { desc = '[ ] Find existing buffers' })
   vim.keymap.set('n', key, func, { desc = desc })
 end

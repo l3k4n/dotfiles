@@ -30,10 +30,5 @@ return {
     vim.keymap.set("n", "<leader>k", function() harpoon:list():select(2) end, { desc = "Harpoon: select 2" })
     vim.keymap.set("n", "<leader>l", function() harpoon:list():select(3) end, { desc = "Harpoon: select 3" })
     vim.keymap.set("n", "<leader>;", function() harpoon:list():select(4) end, { desc = "Harpoon: select 4" })
-
-    vim.keymap.set("n", "<leader>xj", function() harpoon:list():select(1) end, { desc = "Harpoon: replace 1" })
-    vim.keymap.set("n", "<leader>xk", function() harpoon:list():select(2) end, { desc = "Harpoon: replace 2" })
-    vim.keymap.set("n", "<leader>xl", function() harpoon:list():select(3) end, { desc = "Harpoon: replace 3" })
-    vim.keymap.set("n", "<leader>x;", function() harpoon:list():select(4) end, { desc = "Harpoon: replace 4" })
   end
 }
